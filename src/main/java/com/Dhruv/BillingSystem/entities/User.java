@@ -1,5 +1,6 @@
 package com.Dhruv.BillingSystem.entities;
 
+import com.Dhruv.BillingSystem.enums.Role;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -27,7 +28,7 @@ public class User {
     private String password;
 
     @Column(name = "role", nullable = false)
-    private String role;
+    private Role role;
 
     @Column(name = "time_of_creation", nullable = false)
     private String timeOfCreation;
@@ -41,7 +42,7 @@ public class User {
     public User() {
     }
 
-    public User(Long id, String firstName, String lastName, String email, String phoneNumber, String password, String role, String timeOfCreation, String timeOfUpdate, boolean isDeleted) {
+    public User(Long id, String firstName, String lastName, String email, String phoneNumber, String password, Role role, String timeOfCreation, String timeOfUpdate, boolean isDeleted) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -98,11 +99,11 @@ public class User {
         this.password = password;
     }
 
-    public String getRole() {
+    public Role getRole() {
         return role;
     }
 
-    public void setRole(String role) {
+    public void setRole(Role role) {
         this.role = role;
     }
 

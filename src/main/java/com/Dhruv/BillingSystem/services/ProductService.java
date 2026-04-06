@@ -37,8 +37,8 @@ public class ProductService {
         return opt.orElse(null);
     }
 
-    public Product updateProduct(Product productUp) {
-        Product product = getProductById(productUp.getId());
+    public Product updateProduct(Long productId, ProductDTO productUp) {
+        Product product = getProductById(productId);
         product.setName(productUp.getName());
         product.setPrice(productUp.getPrice());
         product.setBarcode(productUp.getBarcode());
