@@ -11,6 +11,7 @@ public class Category {
 
     private String name;
     private String description;
+    private boolean isDeleted;
 
     public Category() {
     }
@@ -19,6 +20,14 @@ public class Category {
         this.id = id;
         this.name = name;
         this.description = description;
+    }
+
+    public boolean isDeleted() {
+        return isDeleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        isDeleted = deleted;
     }
 
     public Long getId() {
